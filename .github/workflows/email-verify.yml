@@ -1,0 +1,12 @@
+name: Verify Email Step
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 21f1002652@ds.study.iitm.ac.in
+        run: echo "Hello from Aaditya — email verification step running fine!"
