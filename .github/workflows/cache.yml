@@ -9,11 +9,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Cache Python dependencies and virtual environment
       - name: Cache dependencies
         id: cache-deps
         uses: actions/cache@v4
@@ -23,7 +21,6 @@ jobs:
             .venv
           key: cache-c55a6c3
 
-      # Prime cache step (prints hit/miss)
       - name: prime-cache-c55a6c3
         run: |
           if [ "${{ steps.cache-deps.outputs.cache-hit }}" == "true" ]; then
@@ -31,7 +28,3 @@ jobs:
           else
             echo "Cache miss!"
           fi
-
-      # Step with your email address
-      - name: 21f1002652@ds.study.iitm.ac.in
-        run: echo "Hello from GitHub Actions!"
